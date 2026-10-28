@@ -87,8 +87,11 @@ reviewed operation.
 
 Change `DEPLOYMENT-V1` in `app/index.html`, commit, and push to `main`.
 Jenkins packages only the contents of `app/`, so `index.html` is at the ZIP
-root. The verification stage requests a cache-busting URL and fails unless
-the expected title and exact marker are served.
+root. It deploys that ZIP and then writes the same checked-out `index.html`
+through Azure's static-file deployment endpoint, which is required for the
+Linux F1 runtime to serve a static page reliably. The verification stage
+requests a cache-busting URL and fails unless the expected title and exact
+marker are served.
 
 ## Troubleshooting
 
