@@ -18,7 +18,9 @@ resource "azurerm_linux_web_app" "website" {
   https_only          = true
 
   site_config {
-    always_on = false
+    always_on        = false
+    app_command_line = "pm2 serve /home/site/wwwroot --no-daemon --spa"
+
     application_stack {
       node_version = "22-lts"
     }
