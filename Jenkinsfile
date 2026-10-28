@@ -11,6 +11,7 @@ pipeline {
         APP_SERVICE_NAME = 'azure-devops-abunesh-2026'
         EXPECTED_MARKER = 'DEPLOYMENT-V1'
         EXPECTED_TITLE = 'Automated Web Application Deployment on Microsoft Azure'
+        PATH = "C:\\terraform;C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin;${env.PATH}"
     }
 
     stages {
@@ -34,6 +35,8 @@ pipeline {
                     findstr /C:"Automated Web Application Deployment on Microsoft Azure" app\\index.html >nul
                     if errorlevel 1 exit /b 1
                     findstr /C:"DEPLOYMENT-V1" app\\index.html >nul
+                    if errorlevel 1 exit /b 1
+                    terraform -chdir=terraform init -backend=false -input=false
                     if errorlevel 1 exit /b 1
                     terraform -chdir=terraform fmt -check
                     terraform -chdir=terraform validate
