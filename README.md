@@ -85,7 +85,7 @@ reviewed operation.
 
 ## Deployment demonstration
 
-Change `DEPLOYMENT-V1` in `app/index.html`, commit, and push to `main`.
+Change the deployment marker in `app/index.html`, commit, and push to `main`.
 Jenkins packages only the contents of `app/`, so `index.html` is at the ZIP
 root. It deploys that ZIP and then writes the same checked-out `index.html`
 through Azure's static-file deployment endpoint, which is required for the
