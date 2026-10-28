@@ -79,7 +79,7 @@ pipeline {
                         if errorlevel 1 exit /b 1
                         az account set --subscription "%AZURE_SUBSCRIPTION_ID%"
                         if errorlevel 1 exit /b 1
-                        az webapp deploy --resource-group "%RESOURCE_GROUP%" --name "%APP_SERVICE_NAME%" --src-path website.zip --type zip --output none
+                        az webapp deploy --resource-group "%RESOURCE_GROUP%" --name "%APP_SERVICE_NAME%" --src-path website.zip --type zip --clean true --track-status true --output none
                     '''
                 }
             }
