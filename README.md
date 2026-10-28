@@ -44,9 +44,9 @@ az group list --output table
 
 Copy `terraform/terraform.tfvars.example` to `terraform/terraform.tfvars`
 only if you need local variable values. The copied file is ignored by Git.
-The default plan SKU is `B1`, a small paid Linux App Service tier. Review the
-Terraform plan and current Azure pricing/credits before applying; do not apply
-without explicit approval. The existing `devops-rg` resource group is reused.
+The default plan SKU is `F1`, the free tier permitted by the current student
+subscription. Review the Terraform plan before applying; the existing
+`devops-rg` resource group is reused.
 
 ## Terraform
 

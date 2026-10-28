@@ -29,7 +29,7 @@ variable "service_plan_name" {
 }
 
 variable "service_plan_sku" {
-  description = "App Service plan SKU. B1 is a small paid Linux tier."
+  description = "App Service plan SKU allowed by the current student subscription."
   type        = string
-  default     = "B1"
+  default     = "F1"
 }
