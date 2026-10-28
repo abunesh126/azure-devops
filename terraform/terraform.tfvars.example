@@ -1,0 +1,6 @@
+subscription_id     = "00000000-0000-0000-0000-000000000000"
+resource_group_name = "devops-rg"
+location            = "centralindia"
+app_service_name    = "replace-with-a-globally-unique-name"
+service_plan_name   = "replace-with-a-plan-name"
+service_plan_sku    = "B1"
